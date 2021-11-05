@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 class Transaction
 {
+    private UserInterface $payer;
+    private UserInterface $payee;
+    private float $amount;
+
     public function __construct(
-        private UserInterface $payer,
-        private UserInterface $payee,
-        private float $amount,
+        UserInterface $payer,
+        UserInterface $payee,
+        float $amount
     ){}
 
     public function make()
@@ -20,3 +24,5 @@ class Transaction
         // faz a transação
     }
 }
+
+new Transaction(new Seller(), new Consumer(), 500);

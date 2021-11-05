@@ -7,13 +7,19 @@ interface DBConnectionInterface
     public function connect();
 }
 
-
 class MySQLConnection implements DBConnectionInterface
 {
-    public function connect(){}
+    public function connect()
+    {}
 }
 
 class OracleConnection implements DBConnectionInterface
+{
+    public function connect()
+    {}
+}
+
+class InMemoryMysql implements DBConnectionInterface
 {
     public function connect()
     {}
@@ -33,3 +39,4 @@ class PasswordReminderRefatored
 
 new PasswordReminderRefatored(new MySQLConnection());
 new PasswordReminderRefatored(new OracleConnection());
+new PasswordReminderRefatored(new InMemoryMysql());

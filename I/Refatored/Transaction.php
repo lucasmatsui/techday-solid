@@ -2,12 +2,16 @@
 
 declare(strict_types=1);
 
-class Transaction
+class TransactionRefatored
 {
+    private IUser $payer;
+    private IUser $payee;
+    private float $amount;
+
     public function __construct(
-        private UserInterface $payer,
-        private UserInterface $payee,
-        private float $amount,
+        IUser $payer,
+        IUser $payee,
+        float $amount
     ){}
 
     public function make()
@@ -20,3 +24,5 @@ class Transaction
         // faz a transação
     }
 }
+
+new TransactionRefatored(new Seller(), new Consumer(), 500);

@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 class BiometricManager
 {
     public function calculateScore(string $biometric, $userId)
